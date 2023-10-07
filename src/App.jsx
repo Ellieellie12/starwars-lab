@@ -3,7 +3,16 @@ import { getAllStarShips } from '../services/sw-api'
 import './App.css'
 
 function App() {
-  const fetchStarShips = async () = useState([])
+  const [starships, setStarShips] = useState([])
+
+  useEffect(() => {
+    const fetchStarShips = async () = => {
+      const starshipsData = await getAllStarShips()
+      setStarShips(starshipsData)
+    }
+    fetchStarShips
+  }. [] )
+  
   
   return (
     <>
