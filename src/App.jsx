@@ -1,33 +1,61 @@
 // import { useEffect, useState } from 'react'
-// import {Route, Routes} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import './App.css'
 import StarShipCard from '../components/StarShipCard'
 import { getAllStarShips } from '../services/sw-api'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import Nav from './components/Nav/Nav'
+
+// function App() {
+//     const [starships, setStarShips] = useState([])
+//     //useState is a hook that defines the state/ initialized state
+  
+//     useEffect(() => {
+//       const fetchStarShips = async ()  => {
+//         const starshipsData = await getAllStarShips()
+//         setStarShips(starshipsData.results)
+//       }
+//       fetchStarShips()
+//     }, [])
+    
+//   if (!starships.length) return <h1>Loading Starships...</h1>
+  
+
+//   return (
+//     <>
+//       <StarShipCard starships={starships} /> 
+//     </>
+//   )
+//   }
+
+// export default App
+
+
+import './App.css'
 
 function App() {
-    const [starships, setStarShips] = useState([])
-    //useState is a hook that defines the state/ initialized state
-  
-    useEffect(() => {
-      const fetchStarShips = async ()  => {
-        const starshipsData = await getAllStarShips()
-        setStarShips(starshipsData.results)
-      }
-      fetchStarShips()
-    }, [])
-    
-  if (!starships.length) return <h1>Loading Starships...</h1>
-  
+  const [starships, setStarShips] = useState([])
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <StarShipCard starships={starships} /> 
+    <Nav />
+      <Routes>
+        <Route path='/starships' element={<StarShipCard />}  />
+      </Routes>
     </>
   )
-  }
+}
 
 export default App
+
+
+{/* <Route path='/ships/:shipId' element={<ShipDetailsWithoutLocationHook />}  />
+ <Route path='/ships/details' element={<ShipDetailsWithLocationHook />}  /> 
+
+
+
+
 
 
 

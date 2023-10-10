@@ -9,7 +9,7 @@ const StarShipCard = (props) => {
       <h1> hello </h1>
       {props.starships.map(starship => 
         <div className="starship-card" key={starship.name}>
-
+        
         </div>
       
 
